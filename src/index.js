@@ -49,8 +49,10 @@
 // 21.   How have other people solved this problem?
 
 function someRecursive(array, callback) {
-  for (val in array) {
-    if (callback(val)) {
+  // iterate through the array
+  for (i in array) {
+    // if a single iterative value is
+    if (someRecursive(array[i], callback(array[i]))) {
       return true;
     }
     return false;
