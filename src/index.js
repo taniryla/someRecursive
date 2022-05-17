@@ -50,11 +50,8 @@
 
 function someRecursive(array, callback) {
   // iterate through the array
-  for (i in array) {
-    // if a single iterative value is
-    if (someRecursive(array[i], callback(array[i]))) {
-      return true;
-    }
-    return false;
-  }
+  if (array.length === 0) return false;
+  if (callback(array[0])) return true;
+  // if a single iterative value is
+  return someRecursive(array.splice(1), callback);
 }
