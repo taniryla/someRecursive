@@ -47,3 +47,12 @@
 // 19.  Can you make the code DRYer and refactor?
 // 20.  Can you improve the performance?
 // 21.   How have other people solved this problem?
+
+function someRecursive(array, callback) {
+  for (val in array) {
+    if (callback(val)) {
+      return true;
+    }
+    return false;
+  }
+}
